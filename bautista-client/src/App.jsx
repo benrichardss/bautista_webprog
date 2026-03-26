@@ -1,24 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { createBrowserRouter, RouterProvider} from 'react-router-dom'
+
+import Layout from './assets/components/Layout';
+import ArticlePage from './assets/pages/ArticlePage';
+import HomePage from './assets/pages/HomePage';
+import AboutPage from './assets/pages/AboutPage';
+
+const routes = [
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '',
+        element: <HomePage />,
+      },
+      {
+        path: 'about',
+        element: <AboutPage />
+      },
+      {
+        path: 'articles',
+        element: <ArticlePage />
+      }
+    ]
+  }
+];
+
+const router = createBrowserRouter(routes);
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to My React App</h1>
-        <p>
-          Name: Aron Gabriel C. Bautista<br/>
-          Email: bautistaac2@students.national-u.edu.ph<br/>
-          Other Personal Info: <a href='https://github.com/benrichardss/bautista_webprog.git'>https://github.com/benrichardss/bautista_webprog.git</a>
-        </p>
-      </header>
-    </div>
-  )
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
-export default App
+export default App;
