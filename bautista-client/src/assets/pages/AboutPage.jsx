@@ -1,19 +1,31 @@
-import Button from "../components/Button";
+import Button from '../components/Button';
+
+const articleImgSrc = [
+  "https://images.unsplash.com/photo-1691982801689-e6e953d5af76" +
+  "?w=1080&fm=jpg",
+
+  "https://images.unsplash.com/photo-1751151856149-5ebf1d21586a" +
+  "?w=1080&fm=jpg",
+
+  "https://images.unsplash.com/photo-1720949579179-b4d04403f548" +
+  "?w=1080&fm=jpg",
+
+  "https://images.unsplash.com/photo-1691982800089-cb7a29c4596b" +
+  "?w=1080&fm=jpg",
+];
 
 const AboutPage = () => {
   return (
     <div className="flex w-full flex-col gap-6">
-
-      {/* Hero Section */}
-      <section className="border-y border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
-        <div className="max-w-4xl mx-auto grid gap-8 lg:grid-cols-2 lg:items-center">
-          <img
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80"
-            alt="Delicious food"
-            className="h-72 w-full rounded-3xl object-cover"
-          />
-
-          {/* Text Content */}
+      <section className="border-y-2 border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+          <div className="overflow-hidden rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-6">
+            <img
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80"
+              alt="Delicious food"
+              className="h-72 w-full rounded-[1.25rem] object-cover"
+            />
+          </div>
           <div>
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500">
               About Cooking Ben
@@ -28,114 +40,128 @@ const AboutPage = () => {
               Founded by passionate food lovers, our mission is to share recipes, techniques, and stories that make cooking enjoyable for everyone.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button to="/">Back Home</Button>
-              <Button to="/articles" variant="primary">
-                Open Articles
+              <Button to="/" variant="primary">
+                Back Home
               </Button>
+              <Button to="/articles">Open Articles</Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="border-y border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
-        <div className="mb-6 text-center">
+      <section className="border-y-2 border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+        <div className="mb-6">
           <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500">
-            Features
+            Profile Overview
           </p>
           <h2 className="mt-2 text-2xl font-semibold text-zinc-900">
-            What We Stand For
+            Culinary Journey Highlights
           </h2>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Made with Love */}
-          <div className="text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-accent rounded-full mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-8 h-8 text-primary"
-              >
-                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
-              </svg>
-            </div>
-            <h3 className="mb-2 font-semibold text-zinc-900">Made with Love</h3>
-            <p className="text-sm text-zinc-600">
-              Every recipe is tested and perfected with care and attention to detail.
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
+            <p className="text-2xl font-bold text-zinc-900">05</p>
+            <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-500">
+              Years in the Kitchen
             </p>
           </div>
-
-          {/* Global Flavors */}
-          <div className="text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-accent rounded-full mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-8 h-8 text-primary"
-              >
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-                <path d="M2 12h20"></path>
-              </svg>
-            </div>
-            <h3 className="mb-2 font-semibold text-zinc-900">Global Flavors</h3>
-            <p className="text-sm text-zinc-600">
-              Explore cuisines from every corner of the world, right in your kitchen.
+          <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
+            <p className="text-2xl font-bold text-zinc-900">16</p>
+            <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-500">
+              Recipes Developed
             </p>
           </div>
-
-          {/* Community Driven */}
-          <div className="text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-accent rounded-full mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-8 h-8 text-primary"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <h3 className="mb-2 font-semibold text-zinc-900">Community Driven</h3>
-            <p className="text-sm text-zinc-600">
-              Join thousands of food enthusiasts sharing their love for cooking.
+          <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
+            <p className="text-2xl font-bold text-zinc-900">09</p>
+            <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-500">
+              Culinary Challenges
+            </p>
+          </div>
+          <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
+            <p className="text-2xl font-bold text-zinc-900">03</p>
+            <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-500">
+              Global Adventures
             </p>
           </div>
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section className="border-y border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
-        <div className="max-w-4xl mx-auto bg-accent p-8 rounded-lg text-center">
-          <h3 className="mb-4 text-2xl font-semibold text-zinc-900">Our Philosophy</h3>
-          <p className="mb-4 text-sm text-zinc-600">
-            We believe cooking should be fun, creative, and rewarding. Our recipes are approachable yet impressive, using fresh ingredients and clear instructions anyone can follow.
-          </p>
-          <p className="text-sm text-zinc-600">
-            Join us as we explore the wonderful world of food, one recipe at a time.
-          </p>
+      <section className="border-y-2 border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500">
+              Our Story
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold text-zinc-900">
+              Culinary Experiences
+            </h2>
+
+            <div className="mt-6 space-y-4">
+              <article className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
+                <h3 className="text-lg font-semibold text-zinc-900">
+                  About Cooking Ben
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-zinc-600">
+                  Welcome to Cooking Ben, where passion meets the plate. Discover recipes, tips, and stories from a culinary enthusiast dedicated to making cooking accessible and fun.
+                </p>
+              </article>
+
+              <article className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
+                <h3 className="text-lg font-semibold text-zinc-900">
+                  Cooking Expertise
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-zinc-600">
+                  From simple weeknight meals to elaborate feasts, explore techniques and recipes that bring flavor and joy to every kitchen adventure.
+                </p>
+              </article>
+
+              <article className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
+                <h3 className="text-lg font-semibold text-zinc-900">
+                  Favorite Recipes
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-zinc-600">
+                  Dive into a collection of tried-and-true recipes, from comforting classics to innovative twists that inspire your next culinary creation.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500">
+              Image Gallery
+            </p>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              <div className="overflow-hidden rounded-[1.25rem]">
+                <img
+                  src={articleImgSrc[0]}
+                  alt="Article 01 image"
+                  className="aspect-[1/1] w-full object-cover"
+                />
+              </div>
+              <div className="overflow-hidden rounded-[1.25rem]">
+                <img
+                  src={articleImgSrc[1]}
+                  alt="Article 02 image"
+                  className="aspect-[1/1] w-full object-cover"
+                />
+              </div>
+              <div className="overflow-hidden rounded-[1.25rem]">
+                <img
+                  src={articleImgSrc[2]}
+                  alt="Article 03 image"
+                  className="aspect-[1/1] w-full object-cover"
+                />
+              </div>
+              <div className="overflow-hidden rounded-[1.25rem]">
+                <img
+                  src={articleImgSrc[3]}
+                  alt="Article 04 image"
+                  className="aspect-[1/1] w-full object-cover"
+                />
+              </div>              
+            </div>
+            <Button className="mt-5">View Section</Button>
+          </div>
         </div>
       </section>
     </div>
