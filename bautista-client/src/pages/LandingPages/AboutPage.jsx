@@ -1,4 +1,4 @@
-import Button from '../components/Button';
+import Button from '../../components/Button';
 
 const articleImgSrc = [
   "https://images.unsplash.com/photo-1691982801689-e6e953d5af76" +
