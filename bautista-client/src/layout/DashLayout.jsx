@@ -42,7 +42,7 @@ export default function DashLayout() {
   const navigate = useNavigate();
 
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "#fafafa" }}>
+    <Box sx={{ minHeight: "100vh", bgcolor: "#f4f4f5" }}>
       <Box
         sx={{
           position: "fixed",
@@ -156,12 +156,12 @@ export default function DashLayout() {
         </Box>
       </Box>
 
-      <Box sx={{ display: "flex", pt: "82px" }}>
+      <Box sx={{ display: "flex", pt: "76px" }}>
         <Box
           sx={{
             position: "sticky",
-            top: "82px",
-            height: "calc(100vh - 82px)",
+            top: "76px",
+            height: "calc(100vh - 76px)",
             borderRight: "1px solid #e4e4e7",
             bgcolor: "#ffffff",
             transition: "all 0.3s ease",
@@ -229,6 +229,7 @@ export default function DashLayout() {
             flex: 1,
             minWidth: 0,
             overflowX: "hidden",
+            py: 3,
           }}
         >
           <Outlet />
