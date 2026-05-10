@@ -328,7 +328,7 @@ export default function ReportsPage() {
           <Box sx={container}>
             <Typography sx={title}>Recent Reports</Typography>
 
-            <Paper elevation={0} sx={{ ...card, p: 1 }}>
+            <Paper elevation={0} sx={card}>
               <DataGrid
                 rows={rows}
                 columns={columns}
@@ -343,6 +343,9 @@ export default function ReportsPage() {
                 autoHeight
                 sx={{
                   border: "none",
+                  borderRadius: "18px",
+                  overflow: "hidden",
+                  fontSize: "0.78rem",
 
                   "& .MuiDataGrid-columnHeaders": {
                     backgroundColor: "#e4e4e7",
@@ -352,10 +355,9 @@ export default function ReportsPage() {
                     borderBottom: "1px solid #e4e4e7",
                   },
 
-                  "& .MuiDataGrid-cell:focus, & .MuiDataGrid-columnHeader:focus":
-                    {
-                      outline: "none",
-                    },
+                  "& .MuiDataGrid-cell:focus, & .MuiDataGrid-columnHeader:focus": {
+                    outline: "none",
+                  },
                 }}
               />
             </Paper>

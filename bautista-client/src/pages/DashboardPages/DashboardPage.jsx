@@ -288,19 +288,21 @@ export default function DashboardPage() {
                   disableRowSelectionOnClick
                   sx={{
                     border: "none",
-  
+                    borderRadius: "18px",
+                    overflow: "hidden",
+                    fontSize: "0.78rem",
+
                     "& .MuiDataGrid-columnHeaders": {
                       backgroundColor: "#e4e4e7",
                     },
-  
+
                     "& .MuiDataGrid-cell": {
                       borderBottom: "1px solid #e4e4e7",
                     },
-  
-                    "& .MuiDataGrid-cell:focus, & .MuiDataGrid-columnHeader:focus":
-                      {
-                        outline: "none",
-                      },
+
+                    "& .MuiDataGrid-cell:focus, & .MuiDataGrid-columnHeader:focus": {
+                      outline: "none",
+                    },
                   }}
                 />
             </Box>

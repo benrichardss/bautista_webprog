@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Button from '../../components/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import { loginUser } from '../../services/UserService'
-import { InputAdornment } from '@mui/material';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 
 const inputClasses =
@@ -13,7 +11,6 @@ function SignInPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -57,41 +54,16 @@ function SignInPage() {
         </div>
 
         <div>
-          <label className="text-sm font-medium" htmlFor='password'>
-            Password
-          </label>
-
-          <div className="relative mt-2">
-            <input
-              type={showPassword ? "text" : "password"}
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="••••••••"
-              className={`${inputClasses} pr-12`} // 👈 important fix
-            />
-
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center"
-            >
-              <span className="flex items-center justify-center w-full h-full leading-none">
-                {showPassword ? (
-                  <Visibility
-                    className="block"
-                    style={{ transform: 'translateY(2.5px)' }}
-                  />
-                ) : (
-                  <VisibilityOff
-                    className="block"
-                    style={{ transform: 'translateY(2.5px)' }}
-                  />
-                )}
-              </span>
-            </button>
-          </div>
+          <label className="text-sm font-medium" htmlFor='password'>Password</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            placeholder="••••••••"
+            className={inputClasses}
+          />
         </div>
 
         <div className="flex items-center justify-between text-sm">

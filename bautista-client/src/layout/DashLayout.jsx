@@ -16,6 +16,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import PeopleIcon from "@mui/icons-material/People";
+import ArticleIcon from '@mui/icons-material/Article';
 
 import logo from "../assets/cookingWithBenLogo.png";
 
@@ -34,12 +35,21 @@ const links = [
     label: "Users",
     to: "/dashboard/users",
     icon: PeopleIcon,
+    adminOnly: true,
+  },
+  {
+    label: "Articles",
+    to: "/dashboard/dasharticles",
+    icon: ArticleIcon,
   },
 ];
 
 export default function DashLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const navigate = useNavigate();
+  const userType = typeof window !== 'undefined' ? localStorage.getItem('type') : null;
+  const visibleLinks = links.filter((link) => !(link.adminOnly && userType !== 'admin'));
+
 
   return (
     <Box sx={{ minHeight: "100vh", bgcolor: "#f4f4f5" }}>
@@ -172,7 +182,7 @@ export default function DashLayout() {
           }}
         >
           <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
-            {links.map((link) => {
+            {visibleLinks.map((link) => {
               const Icon = link.icon;
 
               return (
